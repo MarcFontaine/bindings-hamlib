@@ -43,7 +43,9 @@ before_install:
       export PATH=$HOME/.cabal/bin:$PATH
     fi
 
-  - sudo apt-get install libhamlib-dev
+  - |
+    sudo add-apt-repository -y "deb http://us.archive.ubuntu.com/ubuntu/ zesty universe multiverse"
+    sudo apt-get -t zesty install libhamlib-dev
 
 install:
   - $CABAL install --dependencies-only --enable-tests
